@@ -1,14 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import Heading from './heading';
+import Paragraph from './paragraph';
 
 function App() {
   return (
     <div className="App">
+        <Heading number = "first" />
+        <Heading number = "second" />
+        <Heading number = "third" />
+        <Paragraph description = "happy" />
+        <Paragraph description = "sad" />
+        <Paragraph description = "funky" />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>First Experience with React</h1>
-        <p>React is so cool!</p>
-        <p>I can't wait to become proficient!</p>
         <ul>
           <li>1</li>
           <li>2</li>
