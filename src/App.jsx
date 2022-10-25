@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Heading from './heading';
 import Paragraph from './paragraph';
+import FilmsList from './components/filmsList';
 
 class App extends React.Component {
   constructor (props) {
@@ -39,6 +40,7 @@ class App extends React.Component {
         <ul>{this.state.list.map((item, index) => {
           return <li key = {index}>{item}</li>
         })}</ul>
+        <FilmsList />
       </div>
     );
   }
