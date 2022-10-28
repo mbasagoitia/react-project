@@ -1,49 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import Heading from './heading';
-import Paragraph from './paragraph';
 import FilmsList from './components/filmsList';
 
-class App extends React.Component {
-  constructor (props) {
-    super(props);
+const App = (props) => {
 
-    this.state = {
-      list: ["ready", "set", "GO"],
-      text: "",
-    }
+  const [list, setList] = useState(["ready", "set", "GO"]);
+  const [text, setText] = useState("");
 
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  onSubmit = (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
-    this.setState({
-      list: [...this.state.list, this.state.text],
-      text: "",
-    })
+    setList([...list, text]);
+    setText("");
   }
 
-  render() {
     return (
       <div>
         <h1>Hello World</h1>
-        <form onSubmit = {this.onSubmit}>
-          <input type="text" value = {this.state.text} onChange = {(event) => {
-            this.setState({
-              text: event.target.value,
-            })
+        <form onSubmit = {onSubmit}>
+          <input type="text" value = {text} onChange = {(event) => {
+            setText(event.target.value)
           }}/>
           <button type="submit">Add</button>
         </form>
-        <ul>{this.state.list.map((item, index) => {
+        <ul>{list.map((item, index) => {
           return <li key = {index}>{item}</li>
         })}</ul>
         <FilmsList />
       </div>
     );
   }
-}
+
 
 export default App;
