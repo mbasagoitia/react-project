@@ -1,13 +1,5 @@
 import React from "react";
 
-export function filterFilmsByDirector (list, director) {
-    if (director === "all") {
-        return list;
-    } else {
-        return list.filter((item) => item.director == director);
-    }
-}
-
 export function getListOf (list, prop) {
     const result = [];
     for (let obj of list) {
@@ -17,3 +9,12 @@ export function getListOf (list, prop) {
     }
     return result;
 }
+
+export function filterFilmsByDirector (list, director) {
+    if (director === "all") {
+        return list;
+    } else {
+        return list.filter((item) => item.director == director);
+    }
+}
+

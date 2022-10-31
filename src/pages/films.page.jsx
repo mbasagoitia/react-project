@@ -16,8 +16,9 @@ const FilmsPage = (props) => {
         getFilms();
     }, []);
 
-    const filmsByDirector = filterFilmsByDirector(list, searchDirector);
     const directors = getListOf(list, "director");
+    const filmsByDirector = filterFilmsByDirector(list, searchDirector);
+    
 
       return (
         <>
